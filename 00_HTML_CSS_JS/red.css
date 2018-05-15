@@ -1,0 +1,106 @@
+header , footer{
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+body{
+    margin: 0;
+    font-family: "Franklin Gothic Book",sans-serif;
+}
+/* main navigation */
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav{
+    background-color: mediumvioletred;
+    overflow: hidden;
+}
+nav ul li{
+    float: left;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 14px 25px;
+    display: inline-block;
+}
+nav ul li a:hover{
+    background-color: lightcoral;
+    color: black;
+}
+nav ul li a.active{
+    background-color: indianred;
+    color: white;
+}
+
+/* Sidebar Section */
+aside{
+    float: left;
+    min-width: 200px;
+}
+aside ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+aside ul li a{
+    text-decoration: none;
+    color:  #421F02;
+    padding: 14px 18px;
+    display: block;
+}
+aside ul li a:hover{
+    background-color: palevioletred;
+    color: white;
+}
+
+/* main Section */
+section{
+    margin-left: 200px;
+    border-left: 2px solid red;
+    padding: 10px;
+}
+details{
+    background-color: red;
+    padding: 14px;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+}
+summary{
+    outline: none;
+}
+article{
+    background-color: mediumvioletred;
+    color: black;
+    padding: 10px;
+}
+article h2{
+    color: #421F02;
+}
+/*button section*/
+.button-div{
+    margin-left:33%;
+}
+.button-div button{
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px 35px;
+}
+.button-div #green{
+    background-color: green;
+}
+.button-div #blue{
+    background-color: blue;
+}
+.button-div #yellow{
+    background-color: yellow;
+    color: black;
+}
+.button-div #red{
+    background-color: red;
+}
