@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Functions</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS Functions Example</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+
+<script>
+
+    //creation of a simple function with no args and execute a function
+    function greet() {                      //function definition
+        var output = 'good evening' ;
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    }
+    greet();                              //function execuation
+
+    //creation of a simple function with args
+    function greetArgs(name) {
+        var output='good mng ' +name;
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    }
+    greetArgs('john');
+
+    // executing a function with less number of params
+    function greetlessarges(name,age) {
+        var output = 'hey ' +name+ ' you are ' +age+ ' years old';
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    }
+    greetlessarges('john');
+
+    //executing a function with more number of params
+    function greetmoreArgs(name,age) {
+        var output = 'good morning  ' +name+ ' you are ' +age+ ' years old ' ;
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    }
+    greetmoreArgs('narasimha',20);
+
+    //function overloading is not possible here ---- if you dont give any
+    //thing in the bracket it will accept all  function parameters like age and all
+
+    // functions with return values
+    function greetReturn(name) {
+        var output = ' hey ' +name+ ' i am returning you !';
+        return output;
+    }
+    var greet1 = greetReturn('john');
+    console.log(greet1);
+    document.getElementById('display').innerHTML=greet1;
+
+
+    //function with empty return /no return ..if you don't give return output it shows undefined and also if
+    // you give return only then also it will show undefine -you should call the output  -->if you give return and output you should give var and return1
+    function greetEmptyreturn(Name) {
+        var output = 'hey ' +Name;
+    }
+    var return1 = greetEmptyreturn('john');
+    console.log(return1);
+    document.getElementById('display').innerHTML=return1;
+
+
+    // function Expressions with name and execution
+    var greetFn = function greet() {
+        var output = 'Hellow i am function expression';
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    };
+    greetFn();
+
+
+
+    // Anonymous Function Expression and execution
+    var anonymousFn = function() {
+        var output = "hello i am anonymous function expression";
+        return output;
+    };
+    var returnval= anonymousFn();
+    console.log(returnval);
+    document.getElementById('display').innerHTML=returnval;
+
+
+    // Functions as arguments without args
+    function greetArgs1() {
+        var output = 'i am from greetArgs1 ';
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    }
+    function greetArgs2() {
+        var output = 'i am from greetArgs2 ';
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    }
+    function greetEngine(fName) {
+        fName();
+    }
+    greetEngine(greetArgs2);
+
+    // Functions as arguments with args args
+    function addvalue(a,b) {
+        var output = 'the sub is : ' +(a + b);
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    }
+    function calculator(fName,a,b) {
+        fName(a,b);
+    }
+    calculator(addvalue,10,20);
+
+
+    // Functions in Objects and Execution
+    var employee={
+        firstName : 'john',
+        lastName : 'williams',
+        fullName : function () {
+            return this.firstName + ' ' +this.lastName;
+        }
+    };
+    var propvalue = employee.fullName();
+    console.log(propvalue);
+    document.getElementById('display').innerHTML=propvalue;
+
+
+    // Coding Exercise 1
+    /*
+    Create an employee obj and address object in it. add a property called
+    isFromState() to return true if a person from that state.
+     */
+    var student ={
+        name : 'rajan',
+        age : 25,
+        course : 'engineering ',
+        address : {
+            city : 'vijayawada',
+            state : 'Andhra Pradesh',
+            country : 'India'
+        },
+        isFromCity : function (city) {
+            return this.address.city === city;
+        },
+        isFromState : function (state) {
+            return this.address.state === state;
+        },
+        isFromcountry : function (country) {
+            return this.address.country === country;
+        }
+    };
+    var result = " is from city vijayawada ? " +student.isFromCity('vijayawada');
+    console.log(result);
+    document.getElementById('display').innerHTML=result;
+
+    result = " is he is from AP  : " +student.isFromState('Andhra Pradesh');
+    console.log(result);
+    document.getElementById('display').innerHTML=result;
+
+    result = " isn't he India : " +student.isFromcountry('India');
+    console.log(result);
+    document.getElementById('display').innerHTML=result;
+
+
+    // Default Function Arguments (arguments)
+    function greetdefault() {
+        var output = " ";
+        for(var i=0; i< arguments.length; i++){
+            output += arguments[i] + " ";
+        }
+        console.log(arguments);
+        console.log(output);
+        document.getElementById('display').innerHTML=output;
+    }
+    greetdefault('john',40,'manager');
+
+
+</script>
+</html>

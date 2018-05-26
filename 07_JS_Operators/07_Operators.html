@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Operators</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS Operators Example</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+<script>
+
+    // Assignment operator =
+    var a=10;
+    var output="The Value of A is :" +a;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+
+    // Arithmetic operators + - * /
+    var x=10;
+    var y=20;
+    var sum=x+y;
+    output="The sum of x, y is :" +sum;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    var sub=x-y;
+    output="The sub of x, y is :" + sub;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    var mul=x * y;
+    output="The mul of x, y is :" +mul;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    var div=x/y;
+    output="The div of x, y is :" +div;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+    // Short hand math += , -= , *= , /=
+    var b=10;
+    var c=20;
+    var add=0;
+    add=add+(b+c); //long process
+
+    add+=(b+c);//short method
+    output="the add vale is :" +add;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+
+    // Conditional operators < , > , <= , >= , !=
+    var age=25;
+    if (age <=30){
+        output='get a job';
+    }
+    else {
+        output='get married';
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    // Unary Operator ++ , -- (pre , post)
+    var num1=10;
+    num1=num1+1; //long way
+    num1 +=1;  //short way
+    num1++;  //shostest way / unary operation
+    output='the value is num1 is :' +num1;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    // Logical operators AND , OR
+    var inRealtion=true;
+    var parentsAgree=false;
+    output="";
+    if (inRealtion && parentsAgree){
+        output='get marry soon';
+    }
+    else {
+        output='wait until parents agree ';
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    // String Concatenation Operator(+)
+    var name='john';
+    var age=40;
+    output= name + " " +age;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    // Ternary operator (? :)
+    var a=10;
+    var b=20;
+    output="";
+    (a>b)? output='a is big':output="b is big";
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    // Type of operator
+    var abc ;
+    output='the type of abc is:' +typeof abc;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    var abcd=10;
+
+    abcd='test';
+
+    abcd=true;
+
+    abcd=null;
+    output='the type of abc is:' +typeof abcd;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+
+
+    // == operator
+    var num1=10;
+    var num2="10";  //string
+    output='';
+    if (num1==num2){
+        output='both are equal: ';
+    }
+    else{
+        output='both are not equal';
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    // === operator
+    var num1=10;
+    var num2="10";  //string
+    output='';
+    if (num1===num2){           //we have to use === in javascript only
+        output='both are equal: ';
+    }
+    else{
+        output='both are not equal';
+    }
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+</script>
+</html>
