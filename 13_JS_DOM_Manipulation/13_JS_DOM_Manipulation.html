@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS DOM Manipulation</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS DOM Manipulation</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+<script>
+
+    //BOM Operations--browser object model
+
+    // width of the browser
+    var browser_widht= window.innerWidth + 'px';
+    console.log(browser_widht);
+    document.getElementById('display').innerHTML=browser_widht;
+    //height of the browser
+    var browser_height = window.innerHeight;
+    var output = 'the height of the browser is :' +browser_height + 'px';
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    // Open a new Tab
+    window.open();
+
+    // DOM Properties to get body , title , URL
+    var bodyElement = document.body;
+    console.log(bodyElement);
+
+    var title = document.title;
+    console.log(title);
+    document.getElementById('display').innerHTML=title;
+
+    var url = document.URL;
+    output= " url " +url;
+    console.log(output);
+    document.getElementById('display').innerHTML=output;
+
+    //DOM Methods
+    //document.getElementById();
+    //document.getElementsByClassName();
+    //document.getElementsByTagName();
+    //document.querySelector();
+    //document.querySelectorAll();
+
+    //go to w3schools.com and in web console execute this
+    document.querySelector('.w3-right').innerHTML =
+        '<h3>UI Brains is the laregset site </h3> ';
+
+    document.querySelector('.intro').innerHTML ='<h1> Hacked by narasimha </h1>';
+
+    // Access and Change the Elements
+
+    // DOM Events
+</script>
+</html>
