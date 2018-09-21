@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Objects</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        h2{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 10px;
+        }
+        div{
+            background-color: seagreen;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JS Objects Example</h2>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+
+</body>
+
+<script>
+
+    //creation of objects
+    var student = {};
+    console.log(student);
+
+    //Adding properties to objects
+    student.name = 'pavan';
+    student.age = 26;
+    student.course='engineer';
+    console.log(student);
+
+    //Retrieving properties of objects
+    var student_name= student.name;
+    console.log(student_name);
+    document.getElementById('display').innerHTML= student_name;
+
+    //declaring Object Literals
+    var employee = {
+        ename : 'kumar',
+        sal : 50000,
+        age : 25,
+        designation :'manager'
+    };
+    console.log(employee);
+
+    //Access existing properties
+    var emp_designation = employee.designation;
+    console.log(emp_designation);
+    document.getElementById('display').innerHTML = emp_designation;
+
+    //Access Non Existing Properties
+    var emp_salary = employee.salary;
+    console.log(emp_salary);  /* undefined printed on output (No error)*/
+
+    // Usage of Dot and [] notations
+    var emp_name = employee["ename"];
+    console.log(emp_name);
+
+    // use of [] notation where dot is not used for invalid identifiers
+    var car={
+        1 : "Benz",
+        2: "2018",
+        3: "40lacs"
+    };
+    var car_name = car["1"];
+    console.log(car_name);
+
+    // use of [] notation for accessing dynamic properties
+    var bike ={
+        name : "Royal enfield",
+        milege : "35kmpl",
+        year : 2018
+    };
+
+    var dynamic_property = "name";
+    console.log(bike[dynamic_property]);
+    document.getElementById('display').innerHTML = bike[dynamic_property];
+
+    // nested Objects creation
+    var company = {
+        name : 'HCL Technologies',
+        age : 30,
+        turnover : '10Billion',
+        address : {
+            city : 'Bangalore',
+            state: 'Karnataka',
+            country : 'India'
+        }
+    };
+    console.log(company);
+
+    //Accessing them using dot notation
+    var company_city = company.address.city;
+    console.log(company_city);
+    document.getElementById('display').innerHTML = company_city;
+
+    //Accessing them using mix of dot and [] notation
+    var company_state = company.address["state"];
+    console.log(company_state);
+
+    // Add some properties to nested object and access them
+    company.address.street = "Electronic City";
+    console.log(company);
+
+    // === operator demo for objects (if pointing to same location in memory)
+    var emp1 = {
+        name : 'William',
+        age : 35,
+        designation : 'Sales Manager'
+    };
+    var emp2 = emp1; // both are pointing to same memory location
+    if(emp1 === emp2){
+        console.log("Both are Equal");
+    }
+    else{
+        console.log("Both are Not Equal");
+    }
+
+
+    // deleting a property from an object
+    console.log(company);
+    delete company.address.street;
+    console.log(company);
+
+</script>
+</html>
